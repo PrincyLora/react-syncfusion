@@ -1,23 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-
+import {GridComponent, ColumnDirective, ColumnsDirective, Page, Inject, Filter, Group} from '@syncfusion/ej2-react-grids';
+import data from './datasource.json';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{margin:'10%', marginTop:'5%'}}>
+     <GridComponent dataSource={data} allowPaging={true}
+     pageSettings={{pageSize:6}}
+     
+    allowFiltering={true} allowGrouping={true}>
+      <ColumnsDirective>
+      <ColumnDirective field='OrderID' headerText='Invoice ID' textAlign='Right' width='100'/>
+      <ColumnDirective field='CustomerID' headerText='CustomerID'  width='150'/>
+      <ColumnDirective field='ShipCountry' headerText='Ship Country'  />
+      <ColumnDirective field='ShipName' headerText='Ship Name'  />
+      <ColumnDirective field='Freight' textAlign='Right' format='C2' width='100' />
+      </ColumnsDirective>
+      <Inject services={[Page, Filter, Group]}/>
+      </GridComponent>
     </div>
   );
 }
