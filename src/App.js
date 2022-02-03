@@ -9,7 +9,7 @@ function App() {
      
     allowFiltering={true} allowGrouping={true}>
       <ColumnsDirective>
-      <ColumnDirective field='OrderID' headerText='Invoice ID' textAlign='Right' width='100'/>
+      <ColumnDirective field='OrderID' headerText='Invoice Number' textAlign='Right' width='100'/>
       <ColumnDirective field='CustomerID' headerText='CustomerID'  width='150'/>
       <ColumnDirective field='ShipCountry' headerText='Ship Country'  />
       <ColumnDirective field='ShipName' headerText='Ship Name'  />
